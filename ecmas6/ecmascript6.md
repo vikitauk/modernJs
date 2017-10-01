@@ -98,38 +98,38 @@
 
 ## Object Destructing
 
-#### Introduction
+##### Introduction
 
     let o = {d: 43, b: false};
     let {d, b} = o;
     console.log(d); // 43
     console.log(b); // false
 
-#### Assignment without declaration
+##### Assignment without declaration
     var a, b;
     ({a, b} = {a:1, b:2});
     console.log(a);
     console.log(b);
 
-#### Assigning to new variable names
+##### Assigning to new variable names
     let o = {p: 42, q: false}
     var {p:pp, q:qq} = o;
 
     console.log(pp);
     console.log(qq);
 
-#### Default values:
+##### Default values:
 
     let {a = 0, b = 5} = {b: 43}; // could be something like this {a: 5}
     console.log(a);
     console.log(b);
 
-#### Assigning to new variable names and providing default values:
+##### Assigning to new variable names and providing default values:
     let {a: aa = 0, b: bb=0 } = {a: 99}
     console.log(aa);
     console.log(bb);
 
-#### Unpacking fields from objects passed as function parameter
+##### Unpacking fields from objects passed as function parameter
 
     let user = {
         id: 43,
