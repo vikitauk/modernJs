@@ -10,7 +10,7 @@
         console.log(doubles)
     }
 
-### Arrow functions like callback example
+#### Arrow functions like callback example
 
     function testFunction(){
 
@@ -58,6 +58,7 @@
     console.log(`My name is ${name} i am ${age} years old`);
     console.log(`My name is ${name} i am ${a+b} years old`);
 
+----------
 
 # Destructing
 
