@@ -70,7 +70,7 @@
     console.log(three);
 
 
-### Swapping values;
+#### Swapping values;
 
     var a = 1;
     var b = 2;
@@ -83,32 +83,73 @@
     console.log("a = "+a);
     console.log("b = "+b);
 
-### Ignoring some returned values:
+#### Ignoring some returned values:
 
     let [a, , b] = [1,2,32];
     console.log("a = "+a);
     console.log("b = "+b);
 
-### Assigning the rest:
+#### Assigning the rest:
 
     let [a,...b] = [1,2,32,3,5,7,8];
     console.log(a);
     console.log(b);
+----------
 
 ## Object Destructing
 
+#### Introduction
+
     let o = {d: 43, b: false};
     let {d, b} = o;
-    console.log(d);
+    console.log(d); // 43
+    console.log(b); // false
+
+#### Assignment without declaration
+    var a, b;
+    ({a, b} = {a:1, b:2});
+    console.log(a);
     console.log(b);
 
-### Default values
+#### Assigning to new variable names
+    let o = {p: 42, q: false}
+    var {p:pp, q:qq} = o;
 
-    let {d:dd = 0, b:bb = true} = {d: 43};
-    console.log(dd);
+    console.log(pp);
+    console.log(qq);
+
+#### Default values:
+
+    let {a = 0, b = 5} = {b: 43}; // could be something like this {a: 5}
+    console.log(a);
+    console.log(b);
+
+#### Assigning to new variable names and providing default values:
+    let {a: aa = 0, b: bb=0 } = {a: 99}
+    console.log(aa);
     console.log(bb);
 
-## Unpacking fields from objects passed as function parameter
+#### Unpacking fields from objects passed as function parameter
+
+    let user = {
+        id: 43,
+        displayName: "GoshGosh",
+        fullName: {
+            firstName: "Gosho",
+            lastName: "Petrov"
+        }
+    }
+
+    function userId({id}){
+        return id;
+    }
+
+    function whoIs({displayName, fullName: {firstName, lastName} }){
+        return `${displayName} is ${firstName} ${lastName}`;
+    }
+
+    console.log( userId(user) );
+    console.log( whoIs(user) );
 
 
 
