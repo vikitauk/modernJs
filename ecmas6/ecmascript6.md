@@ -2,15 +2,14 @@
 
 ### Call back example
 
-function testFunction(){
+    function testFunction(){
+        let digArr = [1,2,3,4,5];
+        let doubles = digArr.map(function(x){
+            return x*2;
+        })
+        console.log(doubles)
+    }
 
-    let digArr = [1,2,3,4,5];
-    let doubles = digArr.map(function(x){
-        return x*2;
-    })
-    console.log(doubles)
-
-}
 ----------
 
 ### Arrow function example
