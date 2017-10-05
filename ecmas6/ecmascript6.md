@@ -218,6 +218,17 @@
     var arr = multiply(2,1,2,3)
     console.log(arr);
 
+#### Exercises
+
+- Implement the convertCurrency function that accepts a rate, and a list of values to be converted.
+
+	    function convertCurrency(rate, ...values) {
+	      return values.map((value) => rate * value);
+	    }
+
+	    const converted = convertCurrency(2, 1, 2, 3);
+	    console.log(converted);
+
 
 
 
