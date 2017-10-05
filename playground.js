@@ -1,8 +1,10 @@
 'use strict';
 
-let {d:dd=0, b:bb= true} = {d: 43};
+function multiplay(multiplier, ...theArgs){
+    return theArgs.map( function (element) {
+        return element*multiplier;
+    })
+}
 
-
-
-console.log(dd);
-console.log(bb);
+var arr = multiplay(2,1,2,3)
+console.log(arr);

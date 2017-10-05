@@ -150,8 +150,73 @@
 
     console.log( userId(user) );
     console.log( whoIs(user) );
+----------
+
+# Spread and Rest
+
+## Spread
+
+#### Replace aplly
 
 
+    function myFunction(x,y,z){
+        console.log("x: "+x);
+        console.log("y: "+y);
+        console.log("z: "+z);
+    }
+
+    var args = [0,1,2]
+
+    myFunction.apply(null, args);
+
+    myFunction(...args);
+
+#### Apply for new
+
+    var dateArr = [1970, 1, 12];
+    var d = new Date(...dateArr);
+    console.log(d)
+
+#### More powerful array literal
+
+    var parts = ['shoulders', 'knees'];
+    var lyrics = ['head', ...parts, 'and', 'toes'];
+    console.log(lyrics);
+
+#### A better way to concatenate array
+
+    var arr1 = [0,1,2];
+    var arr2 = [3,4,5];
+    arr1 = [...arr1, ...arr2];
+
+    console.log(arr1);
+
+#### Spread object literals
+
+    var obj1 = {foo: 'bar', x: 42};
+    var obj2 = {foo: 'baz', y: 13};
+    var cloneObject = {...obj1};
+    var mergeObj = {...obj1, ...obj2};
+
+    console.log(cloneObject);
+    console.log(mergeObj);
+
+## Rest
+    function add(...[a,b,c]){
+        return a+b+c;
+    }
+    console.log(add(1));
+    console.log(add(1,2,3));
+    console.log(add(1,2,3,4,5,6,6,7));
+----------
+    function multiply(multiplier, ...theArgs){
+        return theArgs.map( function (element) {
+            return element*multiplier;
+        })
+    }
+
+    var arr = multiply(2,1,2,3)
+    console.log(arr);
 
 
 
