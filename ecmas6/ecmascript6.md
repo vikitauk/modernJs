@@ -1,25 +1,42 @@
 # Var, Let and Const
-####
-    // Just mention the hierarchy how the var are called
+#### Introduction
+    Variables declared with var are function scoped, can be redeclared and reassigned. Variables declared with let are block scope, can not be redeclared, but can be reassigned. Variables declared with const are block scope, can not be redeclared, or reassigned. Variables declared with let or const are not hoisted.
 
-    let message = "simple message";
-    function testLet(){
-        return message; // if there is no declared variable in this scope look in parent scope and ...
+    function varTest() {
+      var x = 1;
+      if (true) {
+        var x = 2;  // same variable!
+        console.log(x);  // 2
+      }
+      console.log(x);  // 2
     }
 ----------
+    function letTest() {
+      let x = 1;
+      if (true) {
+        let x = 2;  // different variable
+        console.log(x);  // 2
+      }
+      console.log(x);  // 1
+    }
+----------
+#### Using let in async functions inside for loops
+    for (var i = 0; i < 10; i++) {
+      console.log(i);
+      setTimeout(function() {
+        console.log('The number is ' + i);
+      }, 1000);
+    }
+----------
+    for (let i = 0; i < 10; i++) {
+      console.log(i);
+      setTimeout(function() {
+        console.log('The number is ' + i);
+      }, 1000);
+    }
 
 
 # Arrow functions
-
-#### Call back example
-
-    function testFunction(){
-        let digArr = [1,2,3,4,5];
-        let doubles = digArr.map(function(x){
-            return x*2;
-        })
-        console.log(doubles)
-    }
 
 #### Arrow function example
 
@@ -33,7 +50,7 @@
         return PI*r*r;
     };
 
-    let circleArea3 = r => 3.14*r*r; // if you have one statement you don't need return
+    let circleArea3 = r => 3.14*r*r;  // if you have one statement you don't need return
 
     console.log(circleArea1(6));
     console.log(circleArea2(6));
@@ -44,19 +61,11 @@
     function testFunction(){
 
         let digArr = [1,2,3,4,5];
-        let doubles = digArr.map((x, index) => x*2)
-        console.log(doubles)
-
-    }
-
-    function testFunction(){
-
-        let digArr = [1,2,3,4,5];
         let doubles = digArr.map( x => x*2 )
         console.log("Array with doubles: " + doubles)
     }
 
-
+    testFunction();
 
 ----------
 
@@ -181,7 +190,7 @@
 
     var args = [0,1,2]
 
-    myFunction(args[0], args[1], args[2]); // the usual way
+    myFunction(args[0], args[1], args[2]); // the old way
 
     myFunction.apply(null, args);
 
@@ -196,9 +205,9 @@
 
 #### More powerful array literal
 
-    var parts = ['shoulders', 'knees'];
-    var lyrics = ['head', ...parts, 'and', 'toes'];
-    console.log(lyrics);
+    var arr1 = [4, 5];
+    var arr2 = [1,2,3, ...arr1, 6, 7,8,9,10];
+    console.log(arr2);
 
 #### A better way to concatenate array
 
@@ -239,12 +248,7 @@
 
 - Implement the convertCurrency function that accepts a rate, and a list of values to be converted.
 
-	    function convertCurrency(rate, ...values) {
-	      return values.map((value) => rate * value);
-	    }
 
-	    const converted = convertCurrency(2, 1, 2, 3);
-	    console.log(converted);
 
 
 
