@@ -1,3 +1,14 @@
+# Var, Let and Const
+####
+    // Just mention the hierarchy how the var are called
+
+    let message = "simple message";
+    function testLet(){
+        return message; // if there is no declared variable in this scope look in parent scope and ...
+    }
+----------
+
+
 # Arrow functions
 
 #### Call back example
@@ -9,6 +20,24 @@
         })
         console.log(doubles)
     }
+
+#### Arrow function example
+
+    function circleArea1(r){
+        const PI = 3.14;
+        return PI*r*r;
+    }
+
+    let circleArea2 = (r) => {
+        const PI = 3.14;
+        return PI*r*r;
+    };
+
+    let circleArea3 = r => 3.14*r*r; // if you have one statement you don't need return
+
+    console.log(circleArea1(6));
+    console.log(circleArea2(6));
+    console.log(circleArea3(6));
 
 #### Arrow functions like callback example
 
@@ -27,22 +56,7 @@
         console.log("Array with doubles: " + doubles)
     }
 
-#### Arrow function example
 
-    function circleArea(r){
-        const PI = 3.14;
-        return PI*r*r;
-    }
-
-    let circleAreaTwo = (r) => {
-        const PI = 3.14;
-        return PI*r*r;
-    };
-
-    let circleAreaThree = r => 3.14*r*r;
-    console.log(circleArea(6));
-    console.log(circleAreaTwo(6));
-    console.log(circleAreaThree(6));
 
 ----------
 
@@ -166,6 +180,8 @@
     }
 
     var args = [0,1,2]
+
+    myFunction(args[0], args[1], args[2]); // the usual way
 
     myFunction.apply(null, args);
 
