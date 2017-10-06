@@ -1,6 +1,6 @@
 # Var, Let and Const
 #### Introduction
-    Variables declared with var are function scoped, can be redeclared and reassigned. Variables declared with let are block scope, can not be redeclared, but can be reassigned. Variables declared with const are block scope, can not be redeclared, or reassigned. Variables declared with let or const are not hoisted.
+Variables declared with var are function scoped, can be redeclared and reassigned. Variables declared with let are block scope, can not be redeclared, but can be reassigned. Variables declared with const are block scope, can not be redeclared, or reassigned. Variables declared with let or const are not hoisted.
 
     function varTest() {
       var x = 1;
