@@ -246,7 +246,41 @@ Variables declared with var are function scoped, can be redeclared and reassigne
 
 #### Exercises
 
+- Arrow functions - Use `map`, `filter` and `reduce` functions of the array object to return the total length of movies created after 2000, using the following array:
+
+    const movies = [
+        {title: 'The Godfather', year: 1972, length: 180, stars: 9},
+        {title: 'Pulp Fiction', year: 1994, length: 165, stars: 8},
+        {title: 'The Lord of the Rings: The Fellowship of the Ring', year: 2003, length: 190, stars: 10},
+        {title: 'Inception', year: 2004, length: 175, stars: 10},
+        {title: 'The Lord of the Rings: The Two Towers', year: 2002, length: 187, stars: 9},
+        {title: 'The Matrix', year: 1999, length: 188, stars: 9},
+        {title: 'The Usual Suspects', year: 1995, length: 160, stars: 7},
+        {title: 'Léon: The Professional', year: 1994, length: 165, stars: 9},
+        {title: 'Saving Private Ryan', year: 1998, length: 173, stars: 8},
+        {title: 'Interstellar', year: 2014, length: 195, stars: 9}
+    ];
+
 - Implement the convertCurrency function that accepts a rate, and a list of values to be converted.
+    
+    const converted = convertCurrency(2, 1, 2, 3);
+    console.log(converted);
+
+- Create a bill calculator function that expects an object, and destructs it:
+
+    let total;
+
+    total = calculateBill({total: 200, tax: 0.3, tip: 0.2});
+    
+    console.log(total);
+
+    total = calculateBill({total: 200});
+    console.log(total);
+
+    total = calculateBill();
+    console.log(total);
+
+
 
 
 
