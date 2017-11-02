@@ -34,3 +34,6 @@ Start server
    
 #### Test
     You can test with any browser or tools such as Postman on utl http://localhost:3030
+    
+#### Note:
+Don't forget to run 'npm install' if you clone Hello world from git!
