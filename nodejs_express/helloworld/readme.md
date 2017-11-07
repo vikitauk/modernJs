@@ -33,7 +33,7 @@ Start server
     command: nodemon app.js 
    
 #### Test
-    You can test with any browser or tools such as Postman on utl http://localhost:3030
+    You can test with any browser or tools such as Postman on url http://localhost:3030
     
 #### Note:
 Don't forget to run 'npm install' if you clone Hello world from git!
