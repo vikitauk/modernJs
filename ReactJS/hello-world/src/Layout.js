@@ -4,11 +4,18 @@ import Header from './Header.js';
 import Content from './Content.js';
 
 class Layout extends Component {
+    constructor(){
+        super();
+        this.state = {title: "Welcome to React Hello World APP"};
+    }
+
+    changeTitle(title){
+        this.setState({title});
+    };
     render() {
-        const title = "Welcome to React Hello World APP";
         return (
             <div>
-                <Header title={title}/>
+                <Header changeTitle={this.changeTitle.bind(this)} title={this.state.title}/>
                 <Content />
             </div>
         );
