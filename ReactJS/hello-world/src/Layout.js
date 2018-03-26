@@ -5,9 +5,10 @@ import Content from './Content.js';
 
 class Layout extends Component {
     render() {
+        const title = "Welcome to React Hello World APP";
         return (
             <div>
-                <Header />
+                <Header title={title}/>
                 <Content />
             </div>
         );
